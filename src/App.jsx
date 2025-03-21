@@ -1,9 +1,32 @@
+import { useState } from "react";
+import Preloader from "./components/Preloader";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Footer from "./components/Footer";
+
 const App = () => {
+  console.log("✅ App is rendering...");
+
+  const [loading, setLoading] = useState(true);
+
   return (
-    <div className="flex items-center justify-center h-screen text-3xl font-bold">
-      Welcome to My Portfolio!
-    </div>
+    <>
+      {loading && <Preloader onFinish={() => setLoading(false)} />}
+      {!loading && (
+        <>
+          <Navbar />
+          <Hero />
+          <About />
+          <Projects />
+          <Education />
+          <Footer />
+        </>
+      )}
+    </>
   );
 };
 
-export default App; 
+export default App;
