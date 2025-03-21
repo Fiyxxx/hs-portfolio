@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./components/Header";
 import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -17,6 +18,7 @@ const App = () => {
       {loading && <Preloader onFinish={() => setLoading(false)} />}
       {!loading && (
         <>
+          <Header />
           <Navbar />
           <Hero />
           <About />
