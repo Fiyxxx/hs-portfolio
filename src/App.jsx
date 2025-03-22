@@ -17,15 +17,17 @@ const App = () => {
     <>
       {loading && <Preloader onFinish={() => setLoading(false)} />}
       {!loading && (
-        <div className="w-full min-h-screen px-4 md:px-2 max-w-screen-xl mx-auto">
+        <>
+        <Navbar />
+        <div className="w-full min-h-screen px-4 md:px-6 max-w-screen-xl mx-auto">
           <Header />
           <Hero />
-          <Navbar />
           <About />
           <Projects />
           <Education />
           <Footer />
         </div>
+        </>
       )}
     </>
   );

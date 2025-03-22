@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const words = [
   "life purpose.",
   "adding value.",
-  "touching lives.",
+  "moving lives.",
   "moneyyy.                   (jk)"
 ];
 
@@ -49,7 +49,7 @@ const Hero = () => {
         <span className="block sm:inline">Passion? No,</span>{' '}
         <span className="block sm:inline text-violet-400 glow">
           {displayedText}
-          <span className="cursor ml-[1px] font-light">|</span>
+          <span className="cursor ml-[1px] font-light"></span>
         </span>
       </h1>
     </section>
