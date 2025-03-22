@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+    scroll-behavior: smooth;
+}
+
 .glow {
     text-shadow: 0 0 10px rgb(181, 67, 181);
   }
@@ -18,4 +22,4 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
   }
-  
+

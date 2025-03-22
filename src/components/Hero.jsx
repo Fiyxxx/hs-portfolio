@@ -46,7 +46,7 @@ const Hero = () => {
   return (
     <section className="flex items-center justify-left min-h-[calc(100vh-80px)] w-full">
       <h1 className="pl-10 text-center text-7xl sm:text-8xl font-bold leading-tight">
-        <span className="block sm:inline">Passion? No,</span>{' '}
+        <span className="block sm:inline">passion? no,</span>{' '}
         <span className="block sm:inline text-violet-400 glow">
           {displayedText}
           <span className="cursor ml-[1px] font-light"></span>
