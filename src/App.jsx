@@ -19,8 +19,8 @@ const App = () => {
       {!loading && (
         <>
           <Header />
-          <Navbar />
           <Hero />
+          <Navbar />
           <About />
           <Projects />
           <Education />
