@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 const words = [
-  "Purpose in Life",
-  "My ",
-  "Unleash your Potential.",
-  "Money. (jk)"
+  "Purpose to Serve.",
+  "Adding Value.",
+  "Touching Lives.",
+  "Money.                   (jk)"
 ];
 
 const Hero = () => {
@@ -45,7 +45,7 @@ const Hero = () => {
 
   return (
     <section className="flex items-center justify-center min-h-[calc(100vh-80px)] w-full">
-      <h1 className="text-7xl font-bold text-white flex text-left mr-[-150px]">
+      <h1 className="text-8xl font-bold text-white flex text-left mr-[-700px]">
         <span className="mr-2">Passion? No,</span>
         <span className="text-cyan-400 min-w-[22ch] text-left">
           {displayedText}
