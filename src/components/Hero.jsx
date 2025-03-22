@@ -70,25 +70,25 @@ const Hero = () => {
       </h1>
 
       <AnimatePresence>
-  {showArrow && (
-    <motion.a
-      key="scroll-arrow"
-      href="#about"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 0.8, y: 0 }}
-      exit={{ opacity: 0, y: 10 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-2xl"
-    >
-      <motion.div
-        animate={{ y: [0, -6, 0] }}
-        transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
-      >
-        ↓
-      </motion.div>
-    </motion.a>
-  )}
-</AnimatePresence>
+        {showArrow && (
+          <motion.a
+            key="scroll-arrow"
+            href="#about"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 0.8, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-2xl"
+          >
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+            > 
+              ↓
+            </motion.div>
+          </motion.a>
+        )}
+    </AnimatePresence>
     </section>
   );
 };
