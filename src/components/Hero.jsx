@@ -47,9 +47,9 @@ const Hero = () => {
     <section className="flex items-center justify-center min-h-[calc(100vh-80px)] w-full">
       <h1 className="text-8xl font-bold text-white flex text-left mr-[-700px]">
         <span className="mr-2">Passion? No,</span>
-        <span className="text-cyan-400 min-w-[22ch] text-left">
+        <span className="text-violet-400 min-w-[20ch] text-left glow">
           {displayedText}
-          <span className="cursor text-white">|</span>
+          <span className="custom-cursor" />
         </span>
       </h1>
     </section>
