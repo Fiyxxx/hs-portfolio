@@ -17,7 +17,7 @@ const App = () => {
     <>
       {loading && <Preloader onFinish={() => setLoading(false)} />}
       {!loading && (
-        <>
+        <div className="w-full min-h-screen px-4 md:px-2 max-w-screen-xl mx-auto">
           <Header />
           <Hero />
           <Navbar />
@@ -25,7 +25,7 @@ const App = () => {
           <Projects />
           <Education />
           <Footer />
-        </>
+        </div>
       )}
     </>
   );

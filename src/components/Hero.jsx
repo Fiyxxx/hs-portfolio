@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 const words = [
-  "my life purpose.",
+  "life purpose.",
   "adding value.",
   "touching lives.",
-  "big money.                   (jk)"
+  "moneyyy.                   (jk)"
 ];
 
 const Hero = () => {
@@ -44,12 +44,12 @@ const Hero = () => {
   }, [charIndex, isDeleting, wordIndex]);
 
   return (
-    <section className="flex items-center justify-center min-h-[calc(100vh-80px)] w-full">
-      <h1 className="text-8xl font-bold text-white flex text-left mr-[-630px]">
-        <span className="mr-2">Passion? No,</span>
-        <span className="text-violet-400 min-w-[20ch] text-left glow">
+    <section className="flex items-center justify-left min-h-[calc(100vh-80px)] w-full">
+      <h1 className="pl-10 text-center text-7xl sm:text-8xl font-bold leading-tight">
+        <span className="block sm:inline">Passion? No,</span>{' '}
+        <span className="block sm:inline text-violet-400 glow">
           {displayedText}
-          <span className="custom-cursor" />
+          <span className="cursor ml-[1px] font-light">|</span>
         </span>
       </h1>
     </section>
