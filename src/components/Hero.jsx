@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const words = [
   "life purpose.",
@@ -12,6 +13,7 @@ const Hero = () => {
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [showArrow, setShowArrow] = useState(true); // ✅ add scroll arrow toggle
 
   useEffect(() => {
     const currentWord = words[wordIndex];
@@ -43,15 +45,50 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, wordIndex]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowArrow(window.scrollY < 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // ✅ run once on load
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="flex items-center justify-left min-h-[calc(100vh-80px)] w-full">
+    <section
+      id="hero"
+      className="relative flex items-center justify-left min-h-screen w-full pb-20"
+    >
       <h1 className="pl-10 text-center text-7xl sm:text-8xl font-bold leading-tight">
-        <span className="block sm:inline">passion? no,</span>{' '}
+        <span className="block sm:inline">passion? no,</span>{" "}
         <span className="block sm:inline text-violet-400 glow">
           {displayedText}
           <span className="cursor ml-[1px] font-light"></span>
         </span>
       </h1>
+
+      <AnimatePresence>
+  {showArrow && (
+    <motion.a
+      key="scroll-arrow"
+      href="#about"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 0.8, y: 0 }}
+      exit={{ opacity: 0, y: 10 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-2xl"
+    >
+      <motion.div
+        animate={{ y: [0, -6, 0] }}
+        transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+      >
+        ↓
+      </motion.div>
+    </motion.a>
+  )}
+</AnimatePresence>
     </section>
   );
 };
