@@ -1,4 +1,5 @@
-import profilePic from "../assets/pic.jpg";
+import profilePic from "../assets/bitavatar.png";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -25,9 +26,30 @@ const About = () => {
           </h3>
           <p className="text-base sm:text-lg leading-relaxed max-w-xl">
             i'm a computing undergraduate majoring in ai systems. beyond passion,
-            i believe in building great systems that change lives. my main focuses are
-            in systems, ai/ml, and quant finance. 
+            i believe in building great systems that change lives.
+            my main interests are systems, ai/ml, and quant finance. 
+            i love exchanging ideas, and
+            taking on new challenges, reach out to me!
           </p>
+
+          <div className="flex items-center gap-6 mt-4 text-white text-2xl">
+            <a
+              href="https://www.linkedin.com/in/goh-han-sheng"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-violet-400 transition-colors"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://github.com/fiyxxx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-violet-400 transition-colors"
+            >
+              <FaGithub />
+            </a>
+          </div>
         </div>
 
         {/* Right: Profile Image */}

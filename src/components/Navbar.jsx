@@ -13,7 +13,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY < 150) {
-        setActiveSection('header');
+        setActiveSection('hero');
         return;
       }
   
