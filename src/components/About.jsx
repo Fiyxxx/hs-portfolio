@@ -113,7 +113,7 @@ const About = () => {
             />
           </motion.div>
 
-          <p className="text-sm text-white-400 mt-2 ml-3">click me! 👆</p>
+          <p className="text-sm text-white-400 mt-3 ml-3">click me! 👆</p>
         </div>
       </div>
     </section>
