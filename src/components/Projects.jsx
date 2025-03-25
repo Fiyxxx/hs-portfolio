@@ -2,39 +2,61 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import lumipic from "../assets/lumi.png";
 import semperstrokepic from "../assets/semperstroke.png";
+import futbolvision from "../assets/futbolvision.png";
+import jitsuna from "../assets/jitsuna.png";
 
 const dummyProjects = [
   {
     title: "lumistudy",
-    description: "This is a short description for project1.",
+    description: [
+      "flashcard study app with llm integration to convert pdf notes to flashcards instantly",
+      "my love letter to 🇸🇬 students, happy learning!",
+      "founder & main coder"
+    ],
     image: lumipic,
-    liveLink: "#",
+    liveLink: "https://lumi-app-theta.vercel.app",
     codeLink: "#",
-    preview: "[react, python, fastapi, llm, firebase]"
+    preview: "[react, python, fastapi, llm, firebase]",
+    emoji: "📚"
   },
   {
     title: "semperstroke",
-    description: "This is a short description for project2.",
+    description: [
+      "vr games that aid rehabilitation of stroke patients",
+      "targeting the critical lack of physios in the market",
+      "main vr coder, in collaboration with nus/ntu medical students"
+    ],
     image: semperstrokepic,
     liveLink: "#",
     codeLink: "#",
-    preview: "[unity, c#, nextjs, metaquest]"
+    preview: "[unity, c#, nextjs, metaquest]",
+    emoji: "🏥"
   },
   {
     title: "futbolvision",
-    description: "This is a short description for project2.",
-    image: "https://via.placeholder.com/400x250",
+    description: [
+      "football analysis system tracking ball, player movements, and other stats",
+      "passion project with my ❤️ for football + computing",
+      "sole coder"
+    ],
+    image: futbolvision,
     liveLink: "#",
     codeLink: "#",
-    preview: "[yolov8, opencv, python]"
+    preview: "[yolov8, opencv, python]",
+    emoji: "⚽️"
   },
   {
     title: "jitsuna",
-    description: "This is a short description for project2.",
-    image: "https://via.placeholder.com/400x250",
+    description: [
+      "habit tracking telegram bot with daily alerts and levels",
+      "i'm big on self improvement, and this bot has helped me along my journey!",
+      "sole coder"
+    ],
+    image: jitsuna,
     liveLink: "#",
     codeLink: "#",
-    preview: "[python, telegramapi, sqlite3]"
+    preview: "[python, telegramapi, sqlite3]",
+    emoji: "✅"
   }
 ];
 
@@ -47,6 +69,9 @@ const Projects = () => {
       [index]: !prev[index],
     }));
   };
+
+const [hoveredIndex, setHoveredIndex] = useState(null);
+const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   return (
     <section
@@ -70,7 +95,13 @@ const Projects = () => {
               {/* Clickable Header */}
               <div
                 onClick={() => toggleProject(index)}
-                className="flex justify-between items-center cursor-pointer hover:text-violet-400 transition-colors"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+                }}
+                className="flex justify-between items-center cursor-pointer hover:text-violet-400 transition-colors relative"
               >
                 <h3 className="text-xl font-semibold">
                   {project.title}
@@ -78,6 +109,19 @@ const Projects = () => {
                 <span className="text-xl text-gray-400 -translate-y-[5px] inline-block">
                   {project.preview}
                 </span>
+
+                {hoveredIndex === index && (
+                  <div
+                    className="absolute pointer-events-none text-2xl transition-transform duration-75"
+                    style={{
+                      top: cursorPos.y,
+                      left: cursorPos.x,
+                      transform: "translate(-50%, -50%)",
+                    }}
+                  >
+                    {project.emoji}
+                  </div>
+                )}
               </div>
 
               {/* Expandable Content */}
@@ -100,7 +144,11 @@ const Projects = () => {
 
                       {/* Text Content */}
                       <div className="flex flex-col gap-4 md:w-1/2">
-                        <p className="text-base">{project.description}</p>
+                      <ul className="list-disc list-inside text-base leading-relaxed space-y-1">
+                        {project.description.map((point, i) => (
+                        <li key={i}>{point}</li>
+                        ))}
+                      </ul>
                         <div className="flex gap-4">
                           <a
                             href={project.liveLink}
