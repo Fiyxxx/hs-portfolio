@@ -43,7 +43,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="pl-5 hidden md:flex fixed left-0 top-1/2 -translate-y-1/2 w-16 flex-col items-start gap-6 text-white z-50">
+    <div className="pl-3 hidden md:flex fixed left-0 top-1/2 -translate-y-1/2 w-16 flex-col items-start gap-6 text-white z-50">
       {sections.map(({ id, label }) => (
         <a
           key={id}
