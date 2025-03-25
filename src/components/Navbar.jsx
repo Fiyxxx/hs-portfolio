@@ -5,6 +5,7 @@ const sections = [
   { id: 'about', label: 'About' },
   { id: 'projects', label: 'Projects' },
   { id: 'education', label: 'Education' },
+  { id: 'experience', label: 'Experience' }
 ];
 
 const Navbar = () => {
