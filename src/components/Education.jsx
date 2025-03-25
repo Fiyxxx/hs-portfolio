@@ -1,7 +1,11 @@
+import ahslogo from "../assets/ahslogo.png";
+import tjclogo from "../assets/tjclogo.png";
+import nuslogo from "../assets/nuslogo.png";
+
 const dummySchools = [
-  { name: "National University of Singapore", years: "2025-2029", focus: "BComp, Business AI Systems", score: "" },
-  { name: "Temasek Junior College", years: "2021-2022", focus: "4H2 Comp, Math, Chem, Econs", score: "RP: 87.5" },
-  { name: "Anglican High School", years: "2017-2020", focus: "8 Subjects, 6 Distinctions", score: "L1R5: 7 Nett"},
+  { name: "National University of Singapore", years: "2025-2029", focus: "BComp, Business AI Systems", score: "", favicon: nuslogo },
+  { name: "Temasek Junior College", years: "2021-2022", focus: "4H2 Comp, Math, Chem, Econs", score: "RP: 87.5", favicon: tjclogo },
+  { name: "Anglican High School", years: "2017-2020", focus: "8 Subjects, 6 Distinctions", score: "L1R5: 7 Nett", favicon: ahslogo}
 ];
 
 const dummyCerts = [
